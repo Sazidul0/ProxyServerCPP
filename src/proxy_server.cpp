@@ -130,9 +130,12 @@ void ProxyServer::handle_client(int client_socket) {
     std::string serialized_request = HttpHandler::serialize_request(request);
     SocketUtils::send_data(target_socket, serialized_request.c_str(), serialized_request.length());
     
-    // Collect the full response to cache it and measure time
+    // Collect response headers first
     auto transfer_start = std::chrono::high_resolution_clock::now();
     std::string full_response;
+    std::string headers_only;
+    bool headers_complete = false;
+    
     while (true) {
         int response_received = SocketUtils::receive_data(target_socket, buffer, BUFFER_SIZE);
         if (response_received <= 0) {
@@ -141,15 +144,28 @@ void ProxyServer::handle_client(int client_socket) {
         
         full_response.append(buffer, response_received);
         SocketUtils::send_data(client_socket, buffer, response_received);
+        
+        // Cache as soon as we have complete headers
+        if (!headers_complete && full_response.find("\r\n\r\n") != std::string::npos) {
+            headers_complete = true;
+            
+            // Parse and cache the response if it's a GET request
+            if (request.method == "GET") {
+                HttpResponse response = HttpHandler::parse_response(full_response);
+                cache_manager->put(request, response);
+                Logger::info("💾 Response headers received - CACHED immediately");
+            }
+        }
     }
-    auto transfer_end = std::chrono::high_resolution_clock::now();
-    auto transfer_duration = std::chrono::duration_cast<std::chrono::milliseconds>(transfer_end - transfer_start);
     
-    // Parse and cache the response if it's a GET request
-    if (request.method == "GET" && !full_response.empty()) {
+    if (!headers_complete && request.method == "GET" && !full_response.empty()) {
+        // Fallback: cache even if headers weren't complete
         HttpResponse response = HttpHandler::parse_response(full_response);
         cache_manager->put(request, response);
     }
+    
+    auto transfer_end = std::chrono::high_resolution_clock::now();
+    auto transfer_duration = std::chrono::duration_cast<std::chrono::milliseconds>(transfer_end - transfer_start);
     
     Logger::info("✓ Response received and transferred in " + std::to_string(transfer_duration.count()) + "ms");
     Logger::info("Request completed (Response size: " + std::to_string(full_response.length()) + " bytes)");
