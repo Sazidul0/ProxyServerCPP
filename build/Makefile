@@ -174,6 +174,30 @@ proxy_server/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy_server.dir/build.make CMakeFiles/proxy_server.dir/build
 .PHONY : proxy_server/fast
 
+src/cache_manager.o: src/cache_manager.cpp.o
+.PHONY : src/cache_manager.o
+
+# target to build an object file
+src/cache_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy_server.dir/build.make CMakeFiles/proxy_server.dir/src/cache_manager.cpp.o
+.PHONY : src/cache_manager.cpp.o
+
+src/cache_manager.i: src/cache_manager.cpp.i
+.PHONY : src/cache_manager.i
+
+# target to preprocess a source file
+src/cache_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy_server.dir/build.make CMakeFiles/proxy_server.dir/src/cache_manager.cpp.i
+.PHONY : src/cache_manager.cpp.i
+
+src/cache_manager.s: src/cache_manager.cpp.s
+.PHONY : src/cache_manager.s
+
+# target to generate assembly for a file
+src/cache_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy_server.dir/build.make CMakeFiles/proxy_server.dir/src/cache_manager.cpp.s
+.PHONY : src/cache_manager.cpp.s
+
 src/http_handler.o: src/http_handler.cpp.o
 .PHONY : src/http_handler.o
 
@@ -307,6 +331,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... proxy_server"
+	@echo "... src/cache_manager.o"
+	@echo "... src/cache_manager.i"
+	@echo "... src/cache_manager.s"
 	@echo "... src/http_handler.o"
 	@echo "... src/http_handler.i"
 	@echo "... src/http_handler.s"

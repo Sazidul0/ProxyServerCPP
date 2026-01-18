@@ -81,12 +81,12 @@ clean: CMakeFiles/proxy_server.dir/clean
 CMakeFiles/proxy_server.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy_server.dir/build.make CMakeFiles/proxy_server.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proxy_server.dir/build.make CMakeFiles/proxy_server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/error/Desktop/Projects/proxy/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target proxy_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/error/Desktop/Projects/proxy/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target proxy_server"
 .PHONY : CMakeFiles/proxy_server.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/proxy_server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/error/Desktop/Projects/proxy/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/error/Desktop/Projects/proxy/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/proxy_server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/error/Desktop/Projects/proxy/build/CMakeFiles 0
 .PHONY : CMakeFiles/proxy_server.dir/rule

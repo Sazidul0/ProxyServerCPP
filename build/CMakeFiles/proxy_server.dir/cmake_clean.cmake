@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/proxy_server.dir/src/cache_manager.cpp.o"
+  "CMakeFiles/proxy_server.dir/src/cache_manager.cpp.o.d"
   "CMakeFiles/proxy_server.dir/src/http_handler.cpp.o"
   "CMakeFiles/proxy_server.dir/src/http_handler.cpp.o.d"
   "CMakeFiles/proxy_server.dir/src/logger.cpp.o"

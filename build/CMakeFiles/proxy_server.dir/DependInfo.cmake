@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/error/Desktop/Projects/proxy/src/cache_manager.cpp" "CMakeFiles/proxy_server.dir/src/cache_manager.cpp.o" "gcc" "CMakeFiles/proxy_server.dir/src/cache_manager.cpp.o.d"
   "/home/error/Desktop/Projects/proxy/src/http_handler.cpp" "CMakeFiles/proxy_server.dir/src/http_handler.cpp.o" "gcc" "CMakeFiles/proxy_server.dir/src/http_handler.cpp.o.d"
   "/home/error/Desktop/Projects/proxy/src/logger.cpp" "CMakeFiles/proxy_server.dir/src/logger.cpp.o" "gcc" "CMakeFiles/proxy_server.dir/src/logger.cpp.o.d"
   "/home/error/Desktop/Projects/proxy/src/main.cpp" "CMakeFiles/proxy_server.dir/src/main.cpp.o" "gcc" "CMakeFiles/proxy_server.dir/src/main.cpp.o.d"

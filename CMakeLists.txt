@@ -21,6 +21,7 @@ set(SOURCES
     src/socket_utils.cpp
     src/http_handler.cpp
     src/logger.cpp
+    src/cache_manager.cpp
 )
 
 # Create executable
