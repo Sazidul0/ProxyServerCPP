@@ -1,0 +1,7 @@
+/home/error/Desktop/Projects/proxy/build/CMakeFiles/proxy_server.dir
+/home/error/Desktop/Projects/proxy/build/CMakeFiles/edit_cache.dir
+/home/error/Desktop/Projects/proxy/build/CMakeFiles/rebuild_cache.dir
+/home/error/Desktop/Projects/proxy/build/CMakeFiles/list_install_components.dir
+/home/error/Desktop/Projects/proxy/build/CMakeFiles/install.dir
+/home/error/Desktop/Projects/proxy/build/CMakeFiles/install/local.dir
+/home/error/Desktop/Projects/proxy/build/CMakeFiles/install/strip.dir
